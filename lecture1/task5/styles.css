@@ -1,0 +1,40 @@
+.container{
+  display: flex;  
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media only screen 
+and (max-device-width : 1300px) {
+    .item{
+      margin: 0.5%;
+      text-align: center;
+      font-size: 25px;
+    }
+    .item1{
+        width: 20%;
+    }
+    .item2{
+      width: 41.3%;
+  }
+    .images{
+      width: 100%;
+    }
+}
+@media only screen and (min-device-width : 1301px)
+and (max-device-width : 2000px) {
+    .item{
+      margin: 0.5%;
+      text-align: center;
+      font-size: 25px;
+    }
+    .item1{
+        width: 19%;
+    }
+    .item2{
+      width: 19%;
+  }
+    .images{
+      width: 100%;
+    }
+}
