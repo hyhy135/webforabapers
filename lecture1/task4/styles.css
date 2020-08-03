@@ -1,0 +1,116 @@
+body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.red{
+    display: flex;
+    background-color: red;
+    width: 38%;
+    margin: 2%;
+    height: 10%;
+}
+
+.orange{
+    display: flex;
+    margin: 2%;
+    height: 10%;
+    background-color: orange;
+    width: 54%;
+}
+
+.green{
+    margin: 2%;
+    background-color: green;
+    width: 100%;
+    height: 45%;
+}
+.brown{
+    margin: 2%;
+    background-color: grey;
+    width: 30%;
+    height: 25%;
+}
+.blue{
+    margin: 2%;
+    width: 29%;
+    height: 25%;
+    background-color: blue;
+}
+.purple{
+    margin: 2%;
+    height: 25%;
+    width: 29%;
+    background-color: purple;
+}
+@media only screen and (max-width: 767px) {
+    body{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .blue { visibility: hidden;
+            order: 4; }
+    .brown { visibility: hidden;
+            order: 5; }
+    .orange { visibility: hidden;
+            order: 6; }
+    .green { 
+        margin: 2%;
+        order: 1; 
+        height: 10%;
+        width: 96%;
+    }
+    .purple { 
+        margin: 2%;
+        order: 2; 
+        height: 10%;
+        width: 96%;
+    }
+    .red { 
+        height: 50%;
+        width: 96%;
+        margin: 2%;
+        order: 3 
+    }
+}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+    body{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .brown { visibility: hidden;
+            order: 6; }
+    .orange {
+        order: 1;
+        width: 38%;
+        margin: 2%;
+        height: 10%;
+    }
+    .green { 
+        margin: 2%;
+        order: 4; 
+        height: 20%;
+        width: 46%;
+    }
+    .purple { 
+        margin: 2%;
+        order: 2; 
+        height: 10%;
+        width: 54%;
+    }
+    .red { 
+        height: 50%;
+        width: 96%;
+        margin: 2%;
+        order: 3 
+    }
+    .blue { 
+        margin: 2%;
+        order: 5; 
+        height: 20%;
+        width: 46%; }
+}
