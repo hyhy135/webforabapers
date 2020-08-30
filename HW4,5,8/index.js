@@ -181,6 +181,13 @@ var data = book.toJSON()
 // };
 
 
+let ID;
+let ref;
+function ajaxCallBack(retString){
+  ID = retString;
+  ref ="http://localhost:2403/books/" + ID ;
+}
+
 //jQuery AJAX request with Promises
 function ajax(options) {
   return new Promise(function (resolve, reject) {
@@ -190,10 +197,9 @@ function ajax(options) {
 
 
 ajax({
-url: "http://date.jsontest.com",
+url: "http://localhost:2403/books",
 type: 'get',
-}).then(
-function fulfillHandler(data) {
+}).then((data) => {
   console.log("successGet");
   console.log(data);
   // callback
@@ -204,15 +210,23 @@ function fulfillHandler(data) {
 });
 
 ajax({
-  url: "https://www.google.com/",
+  url: "http://localhost:2403/books",
   type: 'post',
   dataType: 'json',
   data: data,
-  }).then(
-  function fulfillHandler(data) {
-    console.log("successPost");
-    console.log(data);
-    // callback
+  }).then((data) => {
+    ajaxCallBack(data.id)
+    ajax({
+      url: ref,
+      type: 'delete',
+      }).then((data) =>{
+        console.log("succDelete")
+        // callback
+      }
+      ).catch(function errorHandler(error) {
+      // error
+      console.log("errorDelete")
+    }); 
   }
   ).catch(function errorHandler(error) {
   // error
@@ -220,12 +234,11 @@ ajax({
   });
 
 ajax({
-  url: "/someAdress/someID",
+  url: "http://localhost:2403/books/e44287b408b038c4",
   type: 'put',
   dataType: 'json',
   data: data,
-  }).then(
-  function fulfillHandler(data) {
+  }).then((data) => {
     console.log("successPut");
     // callback
   }
@@ -233,21 +246,6 @@ ajax({
   // error
     console.log("errorPut")
   });
-
-  ajax({
-    url: "/someAdress/someID",
-    type: 'delete',
-    dataType: 'json',
-    data: data,
-    }).then(
-    function fulfillHandler(data) {
-      console.log("succDelete")
-      // callback
-    }
-    ).catch(function errorHandler(error) {
-    // error
-      console.log("errorDelete")
-    });  
 
 
 
