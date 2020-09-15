@@ -1,0 +1,107 @@
+<mvc:View controllerName="W4A.W4A.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page title="{i18n>pageTitle}">
+					<content>
+							<Text text="{='Count is '+ ${count>/}}"/>
+						<Table
+								id="peopleTable"
+								growing="true"
+								growingThreshold="10"
+								items="{three>/}">
+							<columns>
+								<Column id="userName">
+									<Text text="{i18n>userName}"/>
+								</Column>
+								<Column id="middleName">
+									<Text text="{i18n>middleName}"/>
+								</Column>
+								<Column id="firstNameColumn">
+									<Text text="{i18n>firstName}"/>
+								</Column>
+								<Column id="lastNameColumn">
+									<Text text="{i18n>lastName}"/>
+								</Column>
+								<Column id="ageColumn">
+									<Text text="{i18n>age}"/>
+								</Column>
+								<Column id="gender">
+									<Text text="{i18n>gender}"/>
+								</Column>
+								<Column id="emails">
+									<Text text="{i18n>emails}"/>
+								</Column>
+								<Column id="Features">
+									<Text text="{i18n>features}"/>
+								</Column>
+								<Column id="favoriteFeature">
+									<Text text="{i18n>favoriteFeature}"/>
+								</Column>
+								<Column id="addressInfo">
+									<Text text="{i18n>addressInfo}"/>
+								</Column>
+								<Column id="homeAddress">
+									<Text text="{i18n>homeAddress}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{three>UserName}"/>
+									</cells>
+									<cells>
+										<Text text="{MiddleName}"/>
+									</cells>
+									<cells>
+										<Text text="{FirstName}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'LastName',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'Age',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'Gender',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'Emails',
+													targetType: 'any',
+													mode : 'OneTime',
+													formatter: '.formatter.arrayFormatter'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'Features',
+													targetType: 'any',
+													mode : 'OneTime',
+													formatter: '.formatter.arrayFormatter'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'FavoriteFeature',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path: 'AddressInfo',
+													targetType: 'any',
+													mode : 'OneTime',
+													formatter: '.formatter.objectFormatter'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'HomeAddress',
+													targetType: 'any',
+													mode : 'OneTime',
+													formatter: '.formatter.homeAddressFormatter'}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
