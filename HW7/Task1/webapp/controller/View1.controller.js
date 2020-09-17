@@ -96,7 +96,7 @@ sap.ui.define([
 		loadWithExpand: function () {
 			$.ajax({
 				type: "GET",
-				url:"https://services.odata.org/V4/TripPinServiceRW/People?$expand=Photo",
+				url:"https://services.odata.org/V4/TripPinServiceRW/People?$expand=Trips",
 				dataType: "json",
 				beforeSend: () => {
 				},

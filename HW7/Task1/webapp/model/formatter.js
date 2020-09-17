@@ -16,15 +16,12 @@ sap.ui.define([
             return res;
 
         },
-
-        homeAddressFormatter:function (oData){
-            if (oData !== null){
-                return oData.City !== null || oData.Address !== null ? oData.City + ", " + oData.Address : "";
-            }
-            else {
-                return "";
-            }
-
+        tripsFormatter: function (aData) {
+            let res="";
+            for (let i in aData){
+                res+= aData[i].Name + ";"
+            };
+            return res;
         }
     }
 

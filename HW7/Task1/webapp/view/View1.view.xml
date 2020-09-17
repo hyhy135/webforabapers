@@ -4,18 +4,273 @@
 			<pages>
 				<Page title="{i18n>pageTitle}">
 					<content>
-							<Text text="{='Count is '+ ${count>/}}"/>
+						<Text text="{='Total count is '+ ${count>/}}"/>
+						<Table
+							id="peopleTableExpand"
+							growing="true"
+							growingThreshold="10"
+							items="{expand>/value}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>expandTableTitle}" level="H2"/>
+								</content>
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>
+								<Column id="userNameExpand">
+									<Text text="{i18n>userName}"/>
+								</Column>
+								<Column id="firstNameColumnExpand">
+									<Text text="{i18n>firstName}"/>
+								</Column>
+								<Column id="lastNameColumnExpand">
+									<Text text="{i18n>lastName}"/>
+								</Column>
+								<Column id="emailsExpand">
+									<Text text="{i18n>emails}"/>
+								</Column>
+								<Column id="addressInfoExpand">
+									<Text text="{i18n>addressInfo}"/>
+								</Column>
+								<Column id="genderExpand">
+									<Text text="{i18n>gender}"/>
+								</Column>
+								<Column id="concurrencyExpand">
+									<Text text="{i18n>concurrency}"/>
+								</Column>
+								<Column id="tripsExpand">
+									<Text text="{i18n>trips}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{expand>UserName}"/>
+									</cells>
+									<cells>
+										<Text text="{expand>FirstName}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'expand>LastName',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'expand>Emails',
+													targetType: 'any',
+													mode : 'OneTime',
+													formatter: '.formatter.arrayFormatter'}"/>
+									</cells>
+									<cells>
+										<Text text="{path: 'expand>AddressInfo',
+													targetType: 'any',
+													mode : 'OneTime',
+													formatter: '.formatter.objectFormatter'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'expand>Gender',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'expand>Concurrency',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'expand>Trips',
+													targetType: 'any',
+													mode : 'OneTime',
+													formatter: '.formatter.tripsFormatter'}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<Table
+								id="peopleTableSearch"
+								growing="true"
+								growingThreshold="10"
+								items="{search>/value}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>searchTitle}" level="H2"/>
+								</content>
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>
+								<Column id="userNameSearch">
+									<Text text="{i18n>userName}"/>
+								</Column>
+								<Column id="firstNameColumnSearch">
+									<Text text="{i18n>firstName}"/>
+								</Column>
+								<Column id="lastNameColumnSearch">
+									<Text text="{i18n>lastName}"/>
+								</Column>
+								<Column id="emailsSearch">
+									<Text text="{i18n>emails}"/>
+								</Column>
+								<Column id="addressInfoSearch">
+									<Text text="{i18n>addressInfo}"/>
+								</Column>
+								<Column id="genderSearch">
+									<Text text="{i18n>gender}"/>
+								</Column>
+								<Column id="concurrencySearch">
+									<Text text="{i18n>concurrency}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{search>UserName}"/>
+									</cells>
+									<cells>
+										<Text text="{search>FirstName}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'search>LastName',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'search>Emails',
+													targetType: 'any',
+													mode : 'OneTime',
+													formatter: '.formatter.arrayFormatter'}"/>
+									</cells>
+									<cells>
+										<Text text="{path: 'search>AddressInfo',
+													targetType: 'any',
+													mode : 'OneTime',
+													formatter: '.formatter.objectFormatter'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'search>Gender',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'search>Concurrency',
+													targetType: 'any'}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<Table
+								id="peopleTableSelect"
+								growing="true"
+								growingThreshold="10"
+								items="{select>/value}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>selectTitle}" level="H2"/>
+								</content>
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>
+								<Column id="firstNameColumnSelect">
+									<Text text="{i18n>firstName}"/>
+								</Column>
+								<Column id="lastNameColumnSelect">
+									<Text text="{i18n>lastName}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{select>FirstName}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'select>LastName',
+													targetType: 'any'}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<Table
+								id="peopleTableThreeFilters"
+								growing="true"
+								growingThreshold="10"
+								items="{threeFilters>/value}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>combo3filters}" level="H2"/>
+								</content>
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>
+								<Column id="userNameThreeFilters">
+									<Text text="{i18n>userName}"/>
+								</Column>
+								<Column id="firstNameColumnThreeFilters">
+									<Text text="{i18n>firstName}"/>
+								</Column>
+								<Column id="lastNameColumnThreeFilters">
+									<Text text="{i18n>lastName}"/>
+								</Column>
+								<Column id="emailsThreeFilters">
+									<Text text="{i18n>emails}"/>
+								</Column>
+								<Column id="addressInfoThreeFilters">
+									<Text text="{i18n>addressInfo}"/>
+								</Column>
+								<Column id="genderThreeFilters">
+									<Text text="{i18n>gender}"/>
+								</Column>
+								<Column id="concurrencyThreeFilters">
+									<Text text="{i18n>concurrency}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{threeFilters>UserName}"/>
+									</cells>
+									<cells>
+										<Text text="{threeFilters>FirstName}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'threeFilters>LastName',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'threeFilters>Emails',
+													targetType: 'any',
+													mode : 'OneTime',
+													formatter: '.formatter.arrayFormatter'}"/>
+									</cells>
+									<cells>
+										<Text text="{path: 'threeFilters>AddressInfo',
+													targetType: 'any',
+													mode : 'OneTime',
+													formatter: '.formatter.objectFormatter'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'threeFilters>Gender',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'threeFilters>Concurrency',
+													targetType: 'any'}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
 						<Table
 								id="peopleTable"
 								growing="true"
 								growingThreshold="10"
-								items="{three>/}">
+								items="{three>/value}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>combo3}" level="H2"/>
+								</content>
+								</OverflowToolbar>
+							</headerToolbar>
 							<columns>
 								<Column id="userName">
 									<Text text="{i18n>userName}"/>
-								</Column>
-								<Column id="middleName">
-									<Text text="{i18n>middleName}"/>
 								</Column>
 								<Column id="firstNameColumn">
 									<Text text="{i18n>firstName}"/>
@@ -23,26 +278,17 @@
 								<Column id="lastNameColumn">
 									<Text text="{i18n>lastName}"/>
 								</Column>
-								<Column id="ageColumn">
-									<Text text="{i18n>age}"/>
-								</Column>
-								<Column id="gender">
-									<Text text="{i18n>gender}"/>
-								</Column>
 								<Column id="emails">
 									<Text text="{i18n>emails}"/>
-								</Column>
-								<Column id="Features">
-									<Text text="{i18n>features}"/>
-								</Column>
-								<Column id="favoriteFeature">
-									<Text text="{i18n>favoriteFeature}"/>
 								</Column>
 								<Column id="addressInfo">
 									<Text text="{i18n>addressInfo}"/>
 								</Column>
-								<Column id="homeAddress">
-									<Text text="{i18n>homeAddress}"/>
+								<Column id="gender">
+									<Text text="{i18n>gender}"/>
+								</Column>
+								<Column id="concurrency">
+									<Text text="{i18n>concurrency}"/>
 								</Column>
 							</columns>
 							<items>
@@ -51,50 +297,31 @@
 										<Text text="{three>UserName}"/>
 									</cells>
 									<cells>
-										<Text text="{MiddleName}"/>
+										<Text text="{three>FirstName}"/>
 									</cells>
 									<cells>
-										<Text text="{FirstName}"/>
-									</cells>
-									<cells>
-										<Text text="{path:'LastName',
+										<Text text="{path:'three>LastName',
 													targetType: 'any'}"/>
 									</cells>
 									<cells>
-										<Text text="{path:'Age',
-													targetType: 'any'}"/>
-									</cells>
-									<cells>
-										<Text text="{path:'Gender',
-													targetType: 'any'}"/>
-									</cells>
-									<cells>
-										<Text text="{path:'Emails',
+										<Text text="{path:'three>Emails',
 													targetType: 'any',
 													mode : 'OneTime',
 													formatter: '.formatter.arrayFormatter'}"/>
 									</cells>
 									<cells>
-										<Text text="{path:'Features',
-													targetType: 'any',
-													mode : 'OneTime',
-													formatter: '.formatter.arrayFormatter'}"/>
-									</cells>
-									<cells>
-										<Text text="{path:'FavoriteFeature',
-													targetType: 'any'}"/>
-									</cells>
-									<cells>
-										<Text text="{path: 'AddressInfo',
+										<Text text="{path: 'three>AddressInfo',
 													targetType: 'any',
 													mode : 'OneTime',
 													formatter: '.formatter.objectFormatter'}"/>
 									</cells>
 									<cells>
-										<Text text="{path:'HomeAddress',
-													targetType: 'any',
-													mode : 'OneTime',
-													formatter: '.formatter.homeAddressFormatter'}"/>
+										<Text text="{path:'three>Gender',
+													targetType: 'any'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'three>Concurrency',
+													targetType: 'any'}"/>
 									</cells>
 								</ColumnListItem>
 							</items>
